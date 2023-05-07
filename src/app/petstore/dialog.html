@@ -1,0 +1,35 @@
+<div class="container1">
+    <h1 style="text-align:center; font-family:Roboto; font-size:26px; font-weight:500">EDIT</h1>
+    <h2 mat-dialog-title style="text-align:center; font-family:Roboto; font-size:26px; font-weight:500">{{ data?.name }}</h2>
+    <mat-dialog-content>
+      <p>ID: {{ data?.id }}</p>
+    </mat-dialog-content>
+    <div>
+      <div class="center">
+        <h2>Status</h2>
+        <mat-form-field appearance="fill">
+          <mat-label>Status</mat-label>
+          <input matInput [(ngModel)]="data.status" (input)="onInputChange()">
+        </mat-form-field>
+        <h2>Name</h2>
+        <mat-form-field appearance="fill" class="center">
+          <mat-label>Name</mat-label>
+          <input matInput [(ngModel)]="data.name" (input)="onInputChange()">
+        </mat-form-field>
+      </div>
+    </div>
+  
+    <div class="center1">
+      <div>
+        <mat-dialog-actions>
+          <button mat-button (click)="closeDialog1()" class="btn btn-danger ">Close</button>
+        </mat-dialog-actions>
+      </div>
+      <div>
+        <mat-dialog-actions>
+          <button mat-button [disabled]="!isDirty" (click)="closeDialog()" class="btn btn-success">Submit</button>
+        </mat-dialog-actions>
+      </div>
+    </div>
+  </div>
+  

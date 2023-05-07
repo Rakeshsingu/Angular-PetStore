@@ -1,0 +1,8 @@
+.mat-cell {
+    white-space: normal;
+    word-wrap: break-word;
+}
+.table-container {
+    overflow-x: auto;
+    font-family: 'Courier New', Courier, monospace;
+}

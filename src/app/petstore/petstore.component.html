@@ -1,0 +1,52 @@
+<div class = "table-container container">
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!-- Id Column -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> Id </th>
+    <td mat-cell *matCellDef="let element" (click)="showData2(element)"> {{element.id}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let element" (click)="showData2(element)"> {{ element.name}} </td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="photosUrls">
+    <th mat-header-cell *matHeaderCellDef> PhotosUrls </th>
+    <td mat-cell *matCellDef="let element" (click)="showData2(element)"> {{ photosUrl}}</td>
+  </ng-container>
+
+  <!-- Tags Column -->
+  <ng-container matColumnDef="tags.name">
+    <th mat-header-cell *matHeaderCellDef> Tags </th>
+    <td mat-cell *matCellDef="let element" (click)="showData2(element)"> Dogs, Animals, Insects </td>
+  </ng-container>
+
+  <!-- Status Column -->
+  <ng-container matColumnDef="status">
+    <th mat-header-cell *matHeaderCellDef> Status </th>
+    <td mat-cell *matCellDef="let element" (click)="showData2(element)"> {{element.status}} </td>
+  </ng-container>
+
+  <!-- Actions Column -->
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef> Actions </th>
+    <td mat-cell *matCellDef="let element">
+      <button mat-icon-button (click)="showData(element)" class = "btn btn-primary button"> <mat-icon>Edit</mat-icon> </button>
+    </td>
+  </ng-container>
+  
+
+  <!-- Table Rows -->
+  <tr mat-header-row *matHeaderRowDef="displayColumn"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayColumn;"></tr>
+
+  <!-- Paginator -->
+  
+
+</table>
+<mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>
